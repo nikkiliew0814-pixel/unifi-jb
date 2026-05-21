@@ -1,0 +1,83 @@
+export type Lang = "ENG" | "BM" | "中文";
+export const LANGS: Lang[] = ["ENG", "BM", "中文"];
+
+export const T = {
+  nav: {
+    package:   { ENG: "Package",    BM: "Pakej",           "中文": "套餐" },
+    speedTest: { ENG: "Speed Test", BM: "Ujian Kelajuan",  "中文": "网速测试" },
+    coverage:  { ENG: "Coverage",   BM: "Liputan",         "中文": "覆盖检查" },
+    faq:       { ENG: "FAQ",        BM: "Soal Jawab",      "中文": "常见问题" },
+    news:      { ENG: "News",       BM: "Berita",          "中文": "新闻" },
+    enquire:   { ENG: "Enquire Now",BM: "Tanya Sekarang",  "中文": "立即咨询" },
+  },
+  hero: {
+    eyebrow:   { ENG: "The Future of Connectivity", BM: "Masa Depan Sambungan Internet", "中文": "连接的未来" },
+    headline:  { ENG: "SIGN UP\nGET 3 MONTHS\nFREE", BM: "DAFTAR\nDAPA 3 BULAN\nGRATIS", "中文": "注册即享\n3个月\n免费" },
+    cta1:      { ENG: "Check Availability",  BM: "Semak Ketersediaan", "中文": "检查覆盖" },
+    cta2:      { ENG: "View Packages",       BM: "Lihat Pakej",        "中文": "查看套餐" },
+    trust1:    { ENG: "TM Authorised Dealer",    BM: "Penjual Sah TM",         "中文": "TM授权经销商" },
+    trust2:    { ENG: "Approved in 24 hrs",      BM: "Diluluskan dalam 24 jam","中文": "24小时内批准" },
+    trust3:    { ENG: "4.9 / 5 from 2,100+ installs", BM: "4.9/5 daripada 2,100+ pemasangan","中文": "4.9/5 超过2100次安装" },
+    quickTitle:{ ENG: "Check coverage & get started", BM: "Semak liputan & mulakan", "中文": "检查覆盖并开始" },
+    quickName: { ENG: "Your name",    BM: "Nama anda",  "中文": "您的姓名" },
+    quickPhone:{ ENG: "Phone number", BM: "No. telefon","中文": "电话号码" },
+    quickBtn:  { ENG: "Check Coverage Now", BM: "Semak Liputan Sekarang","中文": "立即检查覆盖" },
+    quickNote: { ENG: "We'll contact you on WhatsApp", BM: "Kami akan hubungi anda melalui WhatsApp", "中文": "我们将通过WhatsApp联系您" },
+  },
+  plans: {
+    eyebrow:  { ENG: "Choose Your Perfect Speed",         BM: "Pilih Kelajuan Sempurna Anda",     "中文": "选择您的最佳速度" },
+    headline: { ENG: "How much Mbps do you really need?", BM: "Berapa Mbps yang anda perlukan?",   "中文": "您到底需要多少Mbps？" },
+    sub:      { ENG: "Five honest tiers. No upsell trickery. Pick the speed that matches your household.", BM: "Lima peringkat jujur. Tiada helah jualan. Pilih kelajuan sesuai dengan isi rumah anda.", "中文": "五个诚实档位。无强迫销售。选择适合您家庭的速度。" },
+    promo:    { ENG: "3 Months Free on every plan", BM: "3 Bulan Percuma untuk setiap pelan", "中文": "每个套餐均享3个月免费" },
+    cta:      { ENG: "I'm Interested", BM: "Saya Berminat", "中文": "我感兴趣" },
+  },
+  chatbot: {
+    greeting: { ENG: "Hi! How can we help you today? 👋", BM: "Hai! Bagaimana kami boleh bantu anda hari ini? 👋", "中文": "你好！我们今天能帮您什么？👋" },
+    question: { ENG: "What service do you need?", BM: "Apakah perkhidmatan yang anda perlukan?", "中文": "您需要什么服务？" },
+    new:      { ENG: "New Registration",  BM: "Pendaftaran Baru",  "中文": "新注册" },
+    renew:    { ENG: "Renew Package",     BM: "Perbaharui Pakej",  "中文": "续期套餐" },
+    upgrade:  { ENG: "Upgrade Plan",      BM: "Naik Taraf Pelan",  "中文": "升级套餐" },
+    coverage: { ENG: "Check Coverage",   BM: "Semak Liputan",     "中文": "检查覆盖" },
+    redirect: { ENG: "Opening WhatsApp…", BM: "Membuka WhatsApp…", "中文": "正在打开WhatsApp…" },
+  },
+  modal: {
+    step1title:   { ENG: "Check availability",  BM: "Semak ketersediaan",   "中文": "检查覆盖" },
+    step2title:   { ENG: "Your details",         BM: "Maklumat anda",        "中文": "您的资料" },
+    step3title:   { ENG: "Review & submit",      BM: "Semak & hantar",       "中文": "确认并提交" },
+    step1sub:     { ENG: "Pick a package and where it will be installed.", BM: "Pilih pakej dan tempat pemasangan.", "中文": "选择套餐和安装地点。" },
+    step2sub:     { ENG: "We'll only use these to follow up with you.",    BM: "Kami hanya gunakan ini untuk menghubungi anda.", "中文": "我们只会用这些信息跟进您。" },
+    step3sub:     { ENG: "One more look before we send your enquiry.",     BM: "Semak sekali lagi sebelum kami hantar pertanyaan anda.", "中文": "发送前再确认一次。" },
+    fieldPlan:    { ENG: "Choose your package",    BM: "Pilih pakej anda",     "中文": "选择您的套餐" },
+    fieldState:   { ENG: "Installation state",     BM: "Negeri pemasangan",    "中文": "安装州属" },
+    fieldHome:    { ENG: "Home type",              BM: "Jenis rumah",          "中文": "住宅类型" },
+    fieldName:    { ENG: "Full name",              BM: "Nama penuh",           "中文": "全名" },
+    fieldPhone:   { ENG: "Mobile number",          BM: "Nombor telefon",       "中文": "手机号码" },
+    fieldEmail:   { ENG: "Email",                  BM: "E-mel",                "中文": "电邮" },
+    fieldNote:    { ENG: "Anything we should know?", BM: "Ada yang perlu kami tahu?", "中文": "有什么需要我们了解的吗？" },
+    submit:       { ENG: "Submit enquiry",          BM: "Hantar pertanyaan",    "中文": "提交询问" },
+    continue:     { ENG: "Continue",                BM: "Teruskan",             "中文": "继续" },
+    back:         { ENG: "Back",                    BM: "Kembali",              "中文": "返回" },
+    success:      { ENG: "Enquiry received!",        BM: "Pertanyaan diterima!", "中文": "询问已收到！" },
+    successMsg:   { ENG: "Our dealer team will WhatsApp you within 1 working day to confirm coverage and installation slot.", BM: "Pasukan penjual kami akan WhatsApp anda dalam 1 hari bekerja untuk mengesahkan liputan dan slot pemasangan.", "中文": "我们的经销商团队将在1个工作日内通过WhatsApp与您联系，确认覆盖和安装时间。" },
+    chatNow:      { ENG: "Chat with us on WhatsApp now", BM: "Chat dengan kami di WhatsApp sekarang", "中文": "立即在WhatsApp上与我们聊天" },
+    close:        { ENG: "Close", BM: "Tutup", "中文": "关闭" },
+  },
+  faq: {
+    eyebrow:  { ENG: "Frequently Asked Questions", BM: "Soalan Lazim", "中文": "常见问题" },
+    headline: { ENG: "Everything you need to know about Unifi", BM: "Semua yang perlu anda tahu tentang Unifi", "中文": "关于Unifi您需要了解的一切" },
+  },
+  footer: {
+    tagline:  { ENG: "Authorised Dealer of TM Unifi", BM: "Penjual Sah TM Unifi", "中文": "TM Unifi授权经销商" },
+    sub:      { ENG: "Sign Up Anytime, From Anywhere!", BM: "Daftar Bila-bila Masa, Dari Mana Sahaja!", "中文": "随时随地注册！" },
+    register: { ENG: "Register Now", BM: "Daftar Sekarang", "中文": "立即注册" },
+    terms:    { ENG: "Terms & Conditions", BM: "Terma & Syarat", "中文": "条款与条件" },
+    info:     { ENG: "Information", BM: "Maklumat", "中文": "信息" },
+    privacy:  { ENG: "Privacy Policy",  BM: "Dasar Privasi",  "中文": "隐私政策" },
+    refund:   { ENG: "Refund Policy",   BM: "Dasar Bayaran Balik", "中文": "退款政策" },
+    copyright:{ ENG: "Copyright © TITAN GROUP CORPORATE SDN. BHD. 201201036094 (1436394-W) 2026 All rights reserved.", BM: "Hak Cipta © TITAN GROUP CORPORATE SDN. BHD. 201201036094 (1436394-W) 2026 Semua hak terpelihara.", "中文": "版权所有 © TITAN GROUP CORPORATE SDN. BHD. 201201036094 (1436394-W) 2026 保留所有权利。" },
+  },
+};
+
+export function t(obj: Record<Lang, string>, lang: Lang): string {
+  return obj[lang] ?? obj["ENG"];
+}
