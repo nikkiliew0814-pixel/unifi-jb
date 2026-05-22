@@ -12,4 +12,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // 继续加你的其他页面
   ]
-}
+} 
