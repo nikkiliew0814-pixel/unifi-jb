@@ -7,9 +7,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: 'https://pasangunifi.com/about',
+      url: 'https://pasangunifi.com/check-speed',
       lastModified: new Date(),
     },
-    // 继续加你的其他页面
+    {
+      url: 'https://pasangunifi.com/check-coverage',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://pasangunifi.com/faq',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://pasangunifi.com/news',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://pasangunifi.com/privacy',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://pasangunifi.com/refund',
+      lastModified: new Date(),
+    },
   ]
-} 
+}
