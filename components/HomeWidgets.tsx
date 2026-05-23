@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/LangContext";
 import type { Lang } from "@/lib/i18n";
+import { WA_NUMBER as WA_NUM, waLink } from "@/lib/whatsapp";
 
 /* ─── translations ─────────────────────────────────────── */
 const WT: Record<Lang, {
@@ -241,8 +242,6 @@ export default function HomeWidgets() {
   const faqs = FAQS[lang] ?? FAQS.ENG;
   const [openFaq, setOpenFaq] = useState(0);
 
-  const WA_NUM = process.env.NEXT_PUBLIC_WA_NUMBER ?? "60167482254";
-
   return (
     <section style={{ paddingTop: 0, paddingBottom: 48, position: "relative", zIndex: 1 }}>
       <div className="container">
@@ -387,7 +386,7 @@ export default function HomeWidgets() {
               ))}
             </div>
 
-            <a href={`https://wa.me/${WA_NUM}?text=${encodeURIComponent("Hi, I have a question about Unifi.")}`}
+            <a href={waLink()}
               target="_blank" rel="noopener noreferrer"
               style={{
                 marginTop: 18, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10,

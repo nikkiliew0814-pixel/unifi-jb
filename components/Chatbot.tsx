@@ -21,8 +21,6 @@ export default function Chatbot() {
 
   if (dismissed) return null;
 
-  const WA_NUM = process.env.NEXT_PUBLIC_WA_NUMBER ?? "60167482254";
-
   return (
     <>
       {/* Popup menu */}

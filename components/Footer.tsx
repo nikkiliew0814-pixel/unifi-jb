@@ -3,9 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { T, t } from "@/lib/i18n";
-
-const WA_NUM = process.env.NEXT_PUBLIC_WA_NUMBER ?? "60167482254";
-const WA_DISPLAY = process.env.NEXT_PUBLIC_WA_DISPLAY ?? "016-7482254";
+import { WA_NUMBER as WA_NUM, WA_DISPLAY, waLink } from "@/lib/whatsapp";
 
 export default function Footer({ onEnquire }: { onEnquire: () => void }) {
   const { lang } = useLang();
@@ -154,7 +152,7 @@ export default function Footer({ onEnquire }: { onEnquire: () => void }) {
                 </div>
               </div>
               <a
-                href={`https://wa.me/${WA_NUM}?text=${encodeURIComponent("Hi, I'd like to know more about Unifi plans.")}`}
+                href={waLink()}
                 target="_blank" rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
