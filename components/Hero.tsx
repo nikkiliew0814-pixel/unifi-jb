@@ -179,9 +179,7 @@ function QuickLeadForm({ lang, onSubmit }: { lang: string; onSubmit: () => void 
     e.preventDefault();
     if (!name || !phone) return;
     setSent(true);
-    const msg = encodeURIComponent(`Hi, I want to register a new Unifi plan.\nName: ${name}\nPhone: ${phone}`);
-    const num = process.env.NEXT_PUBLIC_WA_NUMBER ?? "60167482254";
-    window.open(`https://wa.me/${num}?text=${msg}`, "_blank");
+    openWA("new", `\nName: ${name}\nPhone: ${phone}`);
     setTimeout(() => setSent(false), 3000);
   }
 

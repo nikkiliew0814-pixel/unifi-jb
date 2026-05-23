@@ -17,5 +17,11 @@ export function waLink(service?: ServiceType, extra?: string): string {
 }
 
 export function openWA(service?: ServiceType, extra?: string): void {
-  window.open(waLink(service, extra), "_blank", "noopener");
+  const a = document.createElement("a");
+  a.href = waLink(service, extra);
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }

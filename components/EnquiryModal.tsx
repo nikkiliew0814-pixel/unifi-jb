@@ -81,12 +81,16 @@ export default function EnquiryModal({ open, prefillPlan, onClose }: Props) {
   };
 
   const submit = () => {
-    setDone(true);
     try {
       const log = JSON.parse(localStorage.getItem("enquiries") ?? "[]");
       log.unshift({ ...form, at: new Date().toISOString() });
       localStorage.setItem("enquiries", JSON.stringify(log.slice(0, 10)));
     } catch (_) {}
+    // Auto-open WhatsApp immediately so every submission reaches the owner
+    const plan = PLANS.find((p) => p.id === form.plan);
+    const msg = `Hi, I'm ${form.name} (${form.phone}). I want to register for Unifi ${plan?.speed}${plan?.unit} plan in ${form.state}${form.note ? `. ${form.note}` : ""}`;
+    openWA("new", msg);
+    setDone(true);
   };
 
   const handleClose = () => { onClose(); setTimeout(reset, 350); };

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { waLink } from "@/lib/whatsapp";
 
 const PHOTOS = [
   { src: "/assets/installer1.png", caption: "Survey · Taman Johor Bahru" },
@@ -63,7 +64,7 @@ export default function Installation() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/60167482254" target="_blank" rel="noopener" style={{
+              <a href={waLink("new")} target="_blank" rel="noopener noreferrer" style={{
                 marginTop: "auto", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 6,
                 padding: "10px 12px", borderRadius: 999, fontSize: 11.5, fontWeight: 700,
                 background: "linear-gradient(135deg, #FB923C, #F26F22)", color: "#fff",
