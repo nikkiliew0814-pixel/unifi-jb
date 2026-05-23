@@ -68,7 +68,7 @@ function getRec(mbps: number): Rec {
 }
 
 /* ── Speedometer SVG ─────────────────────────────── */
-function Gauge({ value, max = 500, running }: { value: number; max?: number; running: boolean }) {
+function Gauge({ value, max = 500 }: { value: number; max?: number }) {
   const cx = 110, cy = 105, r = 80;
   const startDeg = -210, endDeg = 30;
   const range = endDeg - startDeg;
@@ -84,9 +84,6 @@ function Gauge({ value, max = 500, running }: { value: number; max?: number; run
 
   const pct = Math.min(value, max) / max;
   const fillEnd = startDeg + pct * range;
-  const needleDeg = startDeg + pct * range;
-  const nr = (needleDeg * Math.PI) / 180;
-  const nx = cx + 62 * Math.cos(nr), ny = cy + 62 * Math.sin(nr);
 
   const color = value < 30 ? "#EF4444" : value < 100 ? "#F97316" : value < 300 ? "#EAB308" : "#22C55E";
 
@@ -114,17 +111,9 @@ function Gauge({ value, max = 500, running }: { value: number; max?: number; run
           style={{ transition: "d 0.5s ease" }}/>
       )}
 
-      {/* Needle */}
-      <line x1={cx} y1={cy} x2={running ? nx : cx + 62 * Math.cos((startDeg * Math.PI) / 180)}
-        y2={running ? ny : cy + 62 * Math.sin((startDeg * Math.PI) / 180)}
-        stroke="#0B0E2C" strokeWidth={3} strokeLinecap="round"
-        style={{ transition: "x2 0.5s ease, y2 0.5s ease" }}/>
-      <circle cx={cx} cy={cy} r={8} fill="#0B0E2C"/>
-      <circle cx={cx} cy={cy} r={4} fill="#fff"/>
-
       {/* Speed number */}
       <text x={cx} y={cy + 28} textAnchor="middle" fontSize={30} fontWeight={900} fill="#0B0E2C" fontFamily="system-ui">
-        {value > 0 ? value.toFixed(1) : running ? "…" : "0"}
+        {value > 0 ? value.toFixed(1) : "0"}
       </text>
       <text x={cx} y={cy + 44} textAnchor="middle" fontSize={13} fill="#5B6079" fontFamily="system-ui">Mbps</text>
 
@@ -235,7 +224,7 @@ export default function SpeedCheckPopup({ onPlanSelect }: { onPlanSelect?: (plan
 
         {/* Gauge area */}
         <div style={{ padding: "16px 24px 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Gauge value={displaySpeed} running={phase === "testing"}/>
+          <Gauge value={displaySpeed}/>
 
           {/* Status bar */}
           {phase === "testing" && (

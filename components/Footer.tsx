@@ -107,7 +107,6 @@ export default function Footer({ onEnquire }: { onEnquire: () => void }) {
               {[
                 { label: t(T.footer.privacy, lang), href: "/privacy" },
                 { label: t(T.footer.refund, lang), href: "/refund" },
-                { label: t(T.nav.coverage, lang), href: "/check-coverage" },
                 { label: t(T.nav.speedTest, lang), href: "/check-speed" },
                 { label: t(T.nav.faq, lang), href: "/faq" },
                 { label: t(T.nav.news, lang), href: "/news" },

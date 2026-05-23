@@ -11,10 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: 'https://pasangunifi.com/check-coverage',
-      lastModified: new Date(),
-    },
-    {
       url: 'https://pasangunifi.com/faq',
       lastModified: new Date(),
     },

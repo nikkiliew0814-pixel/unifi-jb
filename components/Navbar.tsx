@@ -9,7 +9,6 @@ import { WA_DISPLAY, openWA } from "@/lib/whatsapp";
 const NAV_ITEMS = [
   { key: "package" as const,   href: "/#package" },
   { key: "speedTest" as const, href: "/check-speed" },
-  { key: "coverage" as const,  href: "/check-coverage" },
   { key: "faq" as const,       href: "/faq" },
   { key: "news" as const,      href: "/news" },
 ];

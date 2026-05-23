@@ -3,7 +3,7 @@ import "./globals.css";
 import { LangProvider } from "@/lib/LangContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://unifi-jb.com"),
+  metadataBase: new URL("https://pasangunifi.com"),
   title: {
     default: "Unifi Johor Bahru | TM Authorised Reseller | Best Fibre Plans JB",
     template: "%s | Unifi JB",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Unifi JB – TM Authorised Reseller",
     title: "Unifi Johor Bahru | TM Authorised Reseller",
     description: "Daftar Unifi di Johor Bahru dengan reseller sah TM. Semak coverage, bandingkan pakej 100Mbps–2Gbps.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Unifi JB Authorised Reseller" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Unifi JB Authorised Reseller" }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
@@ -31,10 +31,10 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Unifi JB Authorised Reseller",
-  description: "TM Unifi authorised reseller in Johor Bahru offering fibre broadband plans from 100Mbps to 2Gbps.",
+  description: "TM Unifi authorised reseller in Johor Bahru offering fibre broadband plans from 100Mbps to 2Gbps. Plans start from RM89/month with free installation.",
   telephone: "+60167482254",
-  url: "https://unifi-jb.com",
-  image: "https://unifi-jb.com/assets/logo.png",
+  url: "https://pasangunifi.com",
+  image: "https://pasangunifi.com/assets/logo-transparent.png",
   address: {
     "@type": "PostalAddress",
     addressRegion: "Johor",

@@ -58,7 +58,7 @@ export default function Plans({ onInterested }: PlansProps) {
     <section id="package" style={{ background: "linear-gradient(180deg, transparent, #fff 30%, #fff 95%, transparent)", paddingTop: 80, paddingBottom: 24, overflow: "visible", position: "relative", zIndex: 1 }}>
       <div className="container" style={{ position: "relative" }}>
         {/* Mascot */}
-        <div aria-hidden style={{
+        <div aria-hidden className="mascot-float" style={{
           position: "absolute", top: -160, right: "6%", width: 260, zIndex: 0,
           animation: "float-y 4s ease-in-out infinite",
           filter: "drop-shadow(0 22px 32px rgba(249,115,22,0.25))",
@@ -89,6 +89,7 @@ export default function Plans({ onInterested }: PlansProps) {
       <style>{`
         @media (max-width: 1180px) { .pkg-grid { grid-template-columns: repeat(3, 1fr) !important; } }
         @media (max-width: 720px)  { .pkg-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px)  { .mascot-float { display: none !important; } }
       `}</style>
     </section>
   );

@@ -21,7 +21,6 @@ export default function Installation() {
           <div style={{ marginBottom: 28 }}>
             <div className="section-label">OUR INSTALLATION WORKS</div>
             <h2 className="section-title">Professional installation you can trust.</h2>
-            <p className="section-sub">Real homes. Real installs. Real Malaysian families. No stock photos.</p>
           </div>
 
           {/* Photo grid + trust card */}

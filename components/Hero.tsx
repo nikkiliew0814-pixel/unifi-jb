@@ -11,7 +11,7 @@ export default function Hero({ onEnquire }: HeroProps) {
   const { lang } = useLang();
 
   return (
-    <header id="top" style={{ position: "relative", zIndex: 1, overflow: "hidden" }}>
+    <header id="top" style={{ position: "relative", zIndex: 1, overflow: "hidden", isolation: "isolate" }}>
       {/* Full-bleed family photo background */}
       <div aria-hidden style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
         <Image
@@ -60,7 +60,7 @@ export default function Hero({ onEnquire }: HeroProps) {
 
       <div className="container hero-grid" style={{
         position: "relative", zIndex: 1, minHeight: 760,
-        padding: "48px 24px 0",
+        padding: "120px 24px 0",
         display: "grid", gridTemplateColumns: "minmax(0, 620px) 1fr",
         gap: 40, alignItems: "center",
       }}>
@@ -159,8 +159,11 @@ export default function Hero({ onEnquire }: HeroProps) {
 
       <style>{`
         @media (max-width: 980px) {
-          .hero-grid { grid-template-columns: 1fr !important; min-height: 0 !important; }
-          .hero-right-stack { display: none !important; }
+          .hero-grid { grid-template-columns: 1fr !important; min-height: 0 !important; padding-top: 100px !important; }
+          .hero-right-stack { display: none !important; visibility: hidden !important; }
+        }
+        @media (max-width: 640px) {
+          .hero-grid { padding-top: 90px !important; }
         }
       `}</style>
     </header>
