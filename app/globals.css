@@ -5,37 +5,47 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  --unifi-orange:        #F26F22;
-  --unifi-orange-600:    #DD5E14;
-  --unifi-orange-300:    #FBB07A;
-  --unifi-orange-100:    #FEE9D8;
+  /* Brand */
+  --orange:              #F97316;
+  --orange-soft:         #FDBA74;
+  --orange-50:           #FFF1E2;
+  --cream:               #FFF7ED;
+  --wood:                #F5E6D3;
+  --navy:                #0F172A;
+  --indigo:              #4338CA;
+  --indigo-deep:         #312E81;
+  --wa-green:            #25D366;
 
+  /* Aliases kept for backward compat */
+  --unifi-orange:        #F97316;
+  --unifi-orange-600:    #EA580C;
+  --unifi-orange-300:    #FDBA74;
+  --unifi-orange-100:    #FFF1E2;
   --unifi-blue:          #1F1F8F;
-  --unifi-blue-700:      #2A2AC4;
-  --unifi-blue-500:      #3838E0;
-  --unifi-blue-300:      #8B8BEF;
-  --unifi-blue-100:      #E6E6FB;
-
-  --ink-900:             #0B0E2C;
-  --ink-700:             #2A2F4E;
-  --ink-500:             #5B6079;
-  --ink-300:             #A8AEC2;
-  --ink-200:             #D6DAE5;
-  --ink-100:             #EEF0F6;
-  --ink-50:              #F7F8FB;
+  --unifi-blue-500:      #4338CA;
+  --ink-900:             #0F172A;
+  --ink-700:             #334155;
+  --ink-500:             #64748B;
+  --ink-300:             #CBD5E1;
+  --ink-200:             #E2E8F0;
+  --ink-100:             #F1F5F9;
+  --ink-50:              #F8FAFC;
   --white:               #FFFFFF;
+  --success:             #22C55E;
+  --danger:              #EF4444;
 
-  --success:             #1FA971;
-  --danger:              #E63B2C;
-
-  --shadow-xs:           0 1px 2px rgba(11,14,44,0.04);
-  --shadow-sm:           0 2px 6px rgba(11,14,44,0.06), 0 1px 2px rgba(11,14,44,0.04);
-  --shadow-md:           0 8px 24px rgba(11,14,44,0.08), 0 2px 4px rgba(11,14,44,0.04);
-  --shadow-lg:           0 20px 48px rgba(11,14,44,0.12);
-  --shadow-cta-orange:   0 10px 24px rgba(242,111,34,0.32);
-  --shadow-cta-blue:     0 10px 24px rgba(56,56,224,0.28);
+  /* Shadows */
+  --shadow-xs:           0 1px 2px rgba(15,23,42,0.04);
+  --shadow-sm:           0 2px 6px rgba(15,23,42,0.06);
+  --shadow-md:           0 8px 24px rgba(15,23,42,0.08);
+  --shadow-lg:           0 20px 48px rgba(15,23,42,0.12);
+  --shadow-card:         0 10px 30px rgba(15,23,42,0.06), 0 2px 6px rgba(15,23,42,0.04);
+  --shadow-glow:         0 20px 60px rgba(249,115,22,0.18);
+  --shadow-cta-orange:   0 10px 24px rgba(249,115,22,0.35);
+  --shadow-cta-blue:     0 10px 24px rgba(67,56,202,0.30);
 
   --font-sans: "Plus Jakarta Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 /* ============================================================
@@ -43,12 +53,98 @@
    ============================================================ */
 html, body {
   font-family: var(--font-sans);
-  color: var(--ink-900);
-  background: #FFFAF3;
+  color: var(--navy);
+  background: var(--cream);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
+
+/* Page atmosphere */
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(900px 600px at 90% -10%, rgba(253,186,116,0.35), transparent 60%),
+    radial-gradient(700px 500px at -10% 20%, rgba(245,230,211,0.6), transparent 65%),
+    radial-gradient(800px 600px at 110% 65%, rgba(253,186,116,0.18), transparent 60%);
+}
+
+/* Section helpers */
+.section-label {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--orange);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.section-label::before {
+  content: ""; width: 24px; height: 2px; background: var(--orange); border-radius: 2px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.05;
+  margin: 12px 0 0; color: var(--navy);
+}
+.section-sub { color: var(--ink-500); font-size: 16px; margin-top: 10px; max-width: 600px; }
+
+/* Gradient text */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #FB923C 0%, #F97316 50%, #C2410C 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.gradient-text-indigo {
+  background: linear-gradient(135deg, #6366F1 0%, #4338CA 55%, #312E81 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Nav link underline */
+.nav-link { position: relative; padding: 8px 4px; }
+.nav-link::after {
+  content: ""; position: absolute; left: 4px; right: 4px; bottom: 0;
+  height: 2px; background: var(--orange); border-radius: 2px;
+  transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Lang segmented control */
+.seg { display: inline-flex; padding: 4px; background: #fff; border: 1px solid var(--ink-200); border-radius: 999px; }
+.seg-btn { padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--ink-500); transition: all .2s ease; }
+.seg-btn.active { background: linear-gradient(135deg, #FB923C, var(--orange)); color: #fff; box-shadow: 0 4px 12px rgba(249,115,22,0.3); }
+
+/* Package card */
+.pkg-card {
+  background: #fff; border-radius: 28px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(249,115,22,0.18);
+  overflow: hidden; transition: transform .25s ease, box-shadow .25s ease;
+  display: flex; flex-direction: column; position: relative;
+}
+.pkg-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(15,23,42,0.10), 0 0 0 1px rgba(249,115,22,0.4); }
+.pkg-head {
+  position: relative; padding: 22px 22px 18px;
+  background: linear-gradient(135deg, #FDBA74 0%, var(--orange) 60%, #EA580C 100%);
+  color: #fff;
+}
+.pkg-head::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 80% at 90% 0%, rgba(255,255,255,0.4), transparent 50%);
+}
+.pkg-exclusive {
+  display: inline-block; background: var(--indigo); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
+}
+
+/* WhatsApp pulse */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 8px 22px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 8px 22px rgba(37,211,102,0.4), 0 0 0 8px rgba(37,211,102,0.18); }
+}
+.wa-pulse { animation: wa-pulse 2.4s ease-in-out infinite; }
+
+/* Float animation */
+@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes orbit-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
 * { box-sizing: border-box; }
 
