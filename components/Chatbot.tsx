@@ -102,10 +102,10 @@ export default function Chatbot() {
             borderRadius: 999, border: 0, cursor: "pointer",
             background: open
               ? "linear-gradient(135deg,#0F172A 0%,#1E1B4B 100%)"
-              : "linear-gradient(135deg,#F26F22 0%,#FB923C 100%)",
+              : "linear-gradient(135deg,#25D366 0%,#1eb95a 100%)",
             boxShadow: open
               ? "0 12px 36px rgba(15,23,42,0.45)"
-              : "0 8px 40px rgba(249,115,22,0.55), 0 2px 12px rgba(249,115,22,0.35)",
+              : "0 8px 40px rgba(37,211,102,0.55), 0 2px 12px rgba(37,211,102,0.35)",
             transition: "all .3s cubic-bezier(.2,.8,.2,1)", position: "relative",
           }}>
 
@@ -128,9 +128,8 @@ export default function Chatbot() {
                 <div style={{ fontSize: 15, fontWeight: 800, color: "#fff", whiteSpace: "nowrap", fontFamily: "var(--font-sans)" }}>
                   Unifi Specialist
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 5 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", display: "inline-block" }}/>
-                  <span style={{ fontSize: 12, color: "rgba(255,255,255,0.85)", fontWeight: 600, fontFamily: "var(--font-sans)" }}>Replied in 5 mins</span>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)", fontWeight: 700, fontFamily: "var(--font-sans)", marginTop: 4, whiteSpace: "nowrap" }}>
+                  Hantar / WhatsApp Saya
                 </div>
               </div>
 
@@ -142,7 +141,7 @@ export default function Chatbot() {
               </div>
 
               {/* Pulse ring */}
-              <span style={{ position: "absolute", inset: -5, borderRadius: 999, border: "2.5px solid rgba(249,115,22,0.45)", animation: "ripple 2.4s ease-out infinite", pointerEvents: "none" }}/>
+              <span style={{ position: "absolute", inset: -5, borderRadius: 999, border: "2.5px solid rgba(37,211,102,0.5)", animation: "ripple 2.4s ease-out infinite", pointerEvents: "none" }}/>
             </>
           )}
         </button>
