@@ -64,7 +64,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right */}
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
             {/* Lang switch */}
             <div className="hide-mobile" style={{
               display: "inline-flex", padding: 3, borderRadius: 999,
@@ -82,18 +82,6 @@ export default function Navbar() {
                 }}>{l}</button>
               ))}
             </div>
-
-            {/* WA button */}
-            <button onClick={() => openWA()} className="btn-wa hide-mobile" style={{ fontSize: 13 }}>
-              <span style={{
-                width: 32, height: 32, borderRadius: "50%", background: "#fff",
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0, color: "#1eb95a",
-              }}>
-                <WAIcon size={18}/>
-              </span>
-              <span style={{ paddingRight: 10 }}>{WA_DISPLAY}</span>
-            </button>
 
             {/* Hamburger */}
             <button className="show-mobile" onClick={() => setDrawer(true)} style={{
