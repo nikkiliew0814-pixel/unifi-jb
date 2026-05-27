@@ -73,13 +73,20 @@ export default function Plans({ onInterested }: PlansProps) {
           <p className="section-sub">{t(T.plans.sub, lang)}</p>
         </div>
 
+        {/* Swipe hint — mobile only */}
+        <div className="swipe-hint" style={{ display: "none", alignItems: "center", gap: 6, marginTop: 14, marginBottom: 2 }}>
+          <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="var(--orange)" strokeWidth={2.2} strokeLinecap="round"><line x1={19} y1={12} x2={5} y2={12}/><polyline points="12 5 5 12 12 19"/></svg>
+          <span style={{ fontSize: 12, fontWeight: 700, color: "var(--ink-500)", letterSpacing: "0.06em" }}>Swipe to compare plans</span>
+          <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="var(--orange)" strokeWidth={2.2} strokeLinecap="round"><line x1={5} y1={12} x2={19} y2={12}/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+
         <div className="pkg-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 18, marginTop: 22 }}>
           {PLANS.map((plan, i) => (
             <PlanCard key={plan.id} plan={plan} lang={lang} delay={i * 60} onInterested={() => onInterested(plan.id)}/>
           ))}
         </div>
 
-        <p style={{ fontSize: 13, color: "var(--ink-500)", textAlign: "center", marginTop: 14 }}>
+        <p className="pkg-disclaimer" style={{ fontSize: 13, color: "var(--ink-500)", textAlign: "center", marginTop: 14 }}>
           * Terms and conditions apply. · Up to 6 months free only when switching from Maxis, CelcomDigi or TIME. · Service tax (8%) not included.
         </p>
 
@@ -88,8 +95,28 @@ export default function Plans({ onInterested }: PlansProps) {
 
       <style>{`
         @media (max-width: 1180px) { .pkg-grid { grid-template-columns: repeat(3, 1fr) !important; } }
-        @media (max-width: 720px)  { .pkg-grid { grid-template-columns: 1fr !important; } }
         @media (max-width: 900px)  { .mascot-float { display: none !important; } }
+        @media (max-width: 720px) {
+          .swipe-hint { display: flex !important; }
+          .pkg-disclaimer { font-size: 11px !important; padding: 0 4px !important; }
+          .pkg-grid {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            gap: 14px !important;
+            margin-left: -16px !important;
+            margin-right: -16px !important;
+            padding: 8px 16px 20px !important;
+          }
+          .pkg-grid::-webkit-scrollbar { display: none; }
+          .pkg-card {
+            flex: 0 0 82vw !important;
+            scroll-snap-align: start !important;
+            transform: none !important;
+          }
+        }
       `}</style>
     </section>
   );

@@ -81,7 +81,25 @@ export default function Installation() {
 
       <style>{`
         @media (max-width: 1280px) { .inst-grid { grid-template-columns: repeat(3, 1fr) !important; } }
-        @media (max-width: 720px)  { .inst-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 720px) {
+          .inst-grid {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            gap: 12px !important;
+            margin-left: -16px !important;
+            margin-right: -16px !important;
+            padding: 4px 16px 16px !important;
+          }
+          .inst-grid::-webkit-scrollbar { display: none; }
+          .inst-grid > * {
+            flex: 0 0 72vw !important;
+            scroll-snap-align: start !important;
+            aspect-ratio: 4/5 !important;
+          }
+        }
       `}</style>
     </section>
   );
