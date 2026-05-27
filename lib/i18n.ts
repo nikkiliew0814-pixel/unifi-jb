@@ -8,6 +8,7 @@ export const T = {
     coverage:  { ENG: "Coverage",   BM: "Liputan",         "中文": "覆盖检查" },
     faq:       { ENG: "FAQ",        BM: "Soal Jawab",      "中文": "常见问题" },
     news:      { ENG: "News",       BM: "Berita",          "中文": "新闻" },
+    contact:   { ENG: "Contact",   BM: "Hubungi Kami",    "中文": "联系我们" },
     enquire:   { ENG: "Enquire Now",BM: "Tanya Sekarang",  "中文": "立即咨询" },
   },
   hero: {

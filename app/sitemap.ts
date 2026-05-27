@@ -23,6 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: 'https://pasangunifi.com/contact',
+      lastModified: new Date(),
+    },
+    {
       url: 'https://pasangunifi.com/refund',
       lastModified: new Date(),
     },

@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { key: "speedTest" as const, href: "/check-speed" },
   { key: "faq" as const,       href: "/faq" },
   { key: "news" as const,      href: "/news" },
+  { key: "contact" as const,   href: "/contact" },
 ];
 
 export default function Navbar() {
