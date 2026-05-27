@@ -5,11 +5,11 @@ import { LangProvider } from "@/lib/LangContext";
 export const metadata: Metadata = {
   metadataBase: new URL("https://pasangunifi.com"),
   title: {
-    default: "Unifi Johor Bahru | TM Authorised Reseller | Best Fibre Plans JB",
+    default: "Pasang Unifi JB | Reseller Sah TM | Daftar Sekarang",
     template: "%s | Unifi JB",
   },
   description:
-    "Daftar Unifi di Johor Bahru dengan reseller sah TM. Semak coverage, bandingkan pakej 100Mbps–2Gbps, dan mohon sekarang. Register Unifi in Johor Bahru – unifi plan murah JB.",
+    "Daftar Unifi Johor Bahru dengan ejen sah TM. Pakej dari RM89, percuma pemasangan & modem WiFi 6. Coverage JB disahkan. WhatsApp sekarang!",
   keywords: [
     "unifi johor bahru", "daftar unifi jb", "unifi plan murah",
     "unifi reseller jb", "broadband johor bahru", "fiber internet jb",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_MY",
     siteName: "Unifi JB – TM Authorised Reseller",
-    title: "Unifi Johor Bahru | TM Authorised Reseller",
-    description: "Daftar Unifi di Johor Bahru dengan reseller sah TM. Semak coverage, bandingkan pakej 100Mbps–2Gbps.",
+    title: "Pasang Unifi JB | Reseller Sah TM | Daftar Sekarang",
+    description: "Daftar Unifi Johor Bahru dengan ejen sah TM. Pakej dari RM89, percuma pemasangan & modem WiFi 6. Coverage JB disahkan.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Unifi JB Authorised Reseller" }],
   },
   twitter: { card: "summary_large_image" },
