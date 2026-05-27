@@ -4,10 +4,11 @@ import Image from "next/image";
 import { waLink } from "@/lib/whatsapp";
 
 const PHOTOS = [
-  { src: "/assets/installer1.png", caption: "Survey · Taman Johor Bahru" },
-  { src: "/assets/installer2.png", caption: "Cabinet · Bandar Baru JB" },
+  { src: "/assets/installer1.png", caption: "Roadshow · Johor Bahru" },
+  { src: "/assets/installer2.png", caption: "Expo Booth · Malaysia" },
   { src: "/assets/installer3.png", caption: "Router Setup · Taman Universiti" },
   { src: "/assets/installer4.png", caption: "Final Walkthrough · Skudai" },
+  { src: "/assets/installer5.png", caption: "Installation · Johor Bahru" },
 ];
 
 export default function Installation() {
@@ -25,7 +26,7 @@ export default function Installation() {
           </div>
 
           {/* Photo grid + trust card */}
-          <div className="inst-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 14 }}>
+          <div className="inst-grid" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 14 }}>
             {PHOTOS.map((img, i) => (
               <figure key={i} style={{
                 margin: 0, position: "relative", aspectRatio: "4/5",
@@ -79,7 +80,7 @@ export default function Installation() {
       </div>
 
       <style>{`
-        @media (max-width: 1100px) { .inst-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+        @media (max-width: 1280px) { .inst-grid { grid-template-columns: repeat(3, 1fr) !important; } }
         @media (max-width: 720px)  { .inst-grid { grid-template-columns: 1fr 1fr !important; } }
       `}</style>
     </section>
