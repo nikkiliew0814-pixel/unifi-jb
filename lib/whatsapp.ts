@@ -1,6 +1,6 @@
 // Strip BOM (﻿) and whitespace that some editors/env systems inject
-export const WA_NUMBER = (process.env.NEXT_PUBLIC_WA_NUMBER ?? "60167482254").replace(/^﻿/, "").trim();
-export const WA_DISPLAY = (process.env.NEXT_PUBLIC_WA_DISPLAY ?? "016-7482254").replace(/^﻿/, "").trim();
+export const WA_NUMBER = (process.env.NEXT_PUBLIC_WA_NUMBER ?? "60163264257").replace(/^﻿/, "").trim();
+export const WA_DISPLAY = (process.env.NEXT_PUBLIC_WA_DISPLAY ?? "016-3264257").replace(/^﻿/, "").trim();
 
 export type ServiceType = "new" | "renew" | "upgrade" | "coverage";
 

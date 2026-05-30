@@ -6,7 +6,7 @@ import { T, t } from "@/lib/i18n";
 
 interface Tier { price: number; contract: number; free: string | null; icon?: "tv" }
 interface PlanDef {
-  id: string; speed: string; upload: string; isPopular?: boolean;
+  id: string; speed: string; upload: string; isPopular?: boolean; isBestValue?: boolean;
   tiers: Tier[]; features: string[];
 }
 interface PlansProps { onInterested: (planId: string) => void }
@@ -18,7 +18,7 @@ const PLANS: PlanDef[] = [
     features: ["100Mbps / 50Mbps", "Wi-Fi 6 Combo Box", "24 Hrs Service Guarantee"],
   },
   {
-    id: "p300", speed: "300Mbps", upload: "100Mbps",
+    id: "p300", speed: "300Mbps", upload: "100Mbps", isBestValue: true,
     tiers: [
       { price: 129, contract: 27, free: "Free 3 Months" },
       { price: 129, contract: 30, free: "Free 6 Months" },
@@ -123,11 +123,17 @@ export default function Plans({ onInterested }: PlansProps) {
 }
 
 function PlanCard({ plan, lang, delay, onInterested }: { plan: PlanDef; lang: ReturnType<typeof useLang>["lang"]; delay: number; onInterested: () => void }) {
-  const isPopular = plan.isPopular ?? false;
+  const isPopular    = plan.isPopular ?? false;
+  const isBestValue  = plan.isBestValue ?? false;
+  const isHighlighted = isPopular || isBestValue;
   return (
     <div className="pkg-card" style={{
-      transform: isPopular ? "translateY(-8px)" : "none",
-      boxShadow: isPopular ? "0 24px 56px rgba(249,115,22,0.18), 0 0 0 2px rgba(249,115,22,0.4)" : "var(--shadow-card)",
+      transform: isPopular ? "translateY(-8px)" : isBestValue ? "translateY(-4px)" : "none",
+      boxShadow: isPopular
+        ? "0 24px 56px rgba(249,115,22,0.22), 0 0 0 2.5px rgba(249,115,22,0.5)"
+        : isBestValue
+          ? "0 16px 40px rgba(34,197,94,0.18), 0 0 0 2px rgba(34,197,94,0.45)"
+          : "var(--shadow-card)",
       animation: `pkg-fade-up .8s ease ${delay}ms backwards`,
     }}>
       {isPopular && (
@@ -138,6 +144,16 @@ function PlanCard({ plan, lang, delay, onInterested }: { plan: PlanDef; lang: Re
           borderRadius: "0 0 8px 8px", boxShadow: "0 4px 12px rgba(67,56,202,0.3)",
         }}>
           ★ {t(T.plans.popular, lang)}
+        </div>
+      )}
+      {isBestValue && (
+        <div style={{
+          position: "absolute", top: 0, right: 16, zIndex: 2,
+          background: "linear-gradient(135deg,#22C55E,#16A34A)", color: "#fff",
+          padding: "6px 12px", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em",
+          borderRadius: "0 0 8px 8px", boxShadow: "0 4px 12px rgba(34,197,94,0.35)",
+        }}>
+          ✦ BEST VALUE
         </div>
       )}
 

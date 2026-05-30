@@ -32,7 +32,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@type": "LocalBusiness",
   name: "Unifi JB Authorised Reseller",
   description: "TM Unifi authorised reseller in Johor Bahru offering fibre broadband plans from 100Mbps to 2Gbps. Plans start from RM89/month with free installation.",
-  telephone: "+60167482254",
+  telephone: "+60163264257",
   url: "https://pasangunifi.com",
   image: "https://pasangunifi.com/assets/logo-transparent.png",
   address: {
@@ -54,7 +54,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   }],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+60167482254",
+    telephone: "+60163264257",
     contactType: "customer service",
     availableLanguage: ["English", "Malay", "Chinese"],
   },

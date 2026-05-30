@@ -11,7 +11,7 @@ A lead generation website for Unifi internet reseller in Johor Bahru.
 Goal: collect enquiries via form and WhatsApp.
 
 ## Business Info
-- WhatsApp: 016-7482254
+- WhatsApp: 016-3264257
 - Service area: Malaysia
 
 ## WhatsApp Smart Link Format
