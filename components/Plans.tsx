@@ -158,7 +158,11 @@ function PlanCard({ plan, lang, delay, onInterested }: { plan: PlanDef; lang: Re
       )}
 
       {/* Card header */}
-      <div className="pkg-head">
+      <div className="pkg-head" style={
+        isPopular   ? { background: "linear-gradient(135deg, #818CF8 0%, #4338CA 55%, #312E81 100%)" } :
+        isBestValue ? { background: "linear-gradient(135deg, #34D399 0%, #16A34A 55%, #14532D 100%)" } :
+        undefined
+      }>
         <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, color: "#fff", letterSpacing: "-0.02em", textAlign: "center", position: "relative", zIndex: 1 }}>
           {plan.speed}
         </div>
